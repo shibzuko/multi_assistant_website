@@ -19,7 +19,6 @@ box-shadow: 0px 15px 15px #00000029;
 border: 3px solid #27A7E7;
 border-radius: 50px;
 opacity: 1;
-transition: transform 0.3s; /* Плавное изменение стиля при наведении */
 
 }
 
@@ -36,7 +35,7 @@ box-shadow: 0px 15px 15px #00000029;
 border: 3px solid #27A7E7;
 border-radius: 50px;
 opacity: 1;
-transition: transform 0.3s; /* Плавное изменение стиля при наведении */
+
 }
 
 
@@ -53,7 +52,7 @@ transition: transform 0.3s; /* Плавное изменение стиля пр
 .inner {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 200px 200px 200px;
+	grid-template-rows: 100px 100px 100px;
 	display: flex;
     flex-direction: column; /* Устанавливаем вертикальное расположение элементов */
     align-items: center; /* Центрируем элементы по горизонтали */
@@ -89,7 +88,7 @@ transition: transform 0.3s; /* Плавное изменение стиля пр
 
 
 /* Медиа-запрос для адаптации на узких экранах (например, мобильных устройствах) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 468px) {
     .inner {
         grid-template-columns: 1fr; /* Один столбец на узких экранах */
     }
