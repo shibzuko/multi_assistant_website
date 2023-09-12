@@ -48,8 +48,6 @@
 	<script src="app.js"></script>
 	<script>
 		let tg = window.Telegram.WebApp; //получаем объект webapp телеграма
-		let mario = document.getElementById("mario");
-		let albert = document.getElementById("albert");
 		tg.expand();  // раскрывает приложение во весь экран
 
 
@@ -70,15 +68,6 @@
 			tg.sendData("albert");
 		});
 
-
-		let btn = document.getElementById("btn");
-
-		btn.addEventListener("click", function(){
-			tg.MainButton.setText("Сообщение отправлено!");
-			tg.MainButton.setText("Сообщение отправлено!");
-			tg.MainButton.show();
-			tg.sendData("send2222222222");
-		});
 
 		tg.close();  // закрывает веб приложение после нажатия кнопки
 
