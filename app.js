@@ -13,3 +13,17 @@ btn.addEventListener("click", function(){
     tg.sendData("sendTestMessage");
 });
 
+let mario = document.getElementById("mario"); //получаем кнопку активировать/деактивировать
+let albert = document.getElementById("albert");
+
+mario.addEventListener("click", function(){
+	tg.MainButton.setText("Сообщение отправлено!");
+	tg.MainButton.show();
+	tg.sendData("mario");
+});
+
+albert.addEventListener("click", function(){
+	tg.MainButton.setText("Сообщение отправлено!");
+	tg.MainButton.show();
+	tg.sendData("albert");
+});
