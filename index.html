@@ -14,10 +14,11 @@
 		<div class="inner">
 			<div class="item">
 
-				<a href="#" id="mario">
+
 					<img class="mario" alt>
-					<p>Марио - персонаж игры</p>
-            	</a>
+
+					<button href="#" class="mario" id="mario">hhhh</button>
+
 
 			</div>
 
@@ -26,19 +27,20 @@
 
 			<div class="item">
 
-				<a href="#" id="albert">
+				<a href="#">
 					<img class="albert">
-					<p>Альберт Эйнштейн - физик-теоретик</p>
+
+					<button class="btn" id="albert">Альберт Эйнштейн - физик-теоретик</button>
 				</a>
 			</div>
 
-			<div class="item">
+<!--			<div class="item">-->
 
-				<button href="#" id="test">
-					<img class="albert">
-					<p>TEST</p>
-				</button>
-			</div>
+<!--				<button href="#" id="test">-->
+<!--					<img class="albert">-->
+<!--					<p>TEST</p>-->
+<!--				</button>-->
+<!--			</div>-->
 
 
 		</div>
@@ -64,13 +66,14 @@
 		mario.addEventListener("click", function(){
 			tg.MainButton.setText("Сообщение отправлено!");
 			tg.MainButton.show();
-			tg.sendData("sendTestMessage");
+			tg.sendData("mario");
 		});
 
 
 		let btn = document.getElementById("btn");
 
 		btn.addEventListener("click", function(){
+			tg.MainButton.setText("Сообщение отправлено!");
 			tg.MainButton.setText("Сообщение отправлено!");
 			tg.MainButton.show();
 			tg.sendData("sendTestMessage");
