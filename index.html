@@ -11,25 +11,12 @@
 	<div class="container">
 		<div class="inner">
 			<div class="item">
-
-
 				<img class="mario">
-
 				<button class="btn" id="mario">Mario - персонаж игры</button>
-
-
 			</div>
-
-
-
-
 			<div class="item">
-
-
 				<img class="albert">
-
 				<button class="btn" id="albert">Альберт Эйнштейн - физик-теоретик</button>
-
 			</div>
 
 		</div>
@@ -40,29 +27,7 @@
 	<script>
 		let tg = window.Telegram.WebApp; //получаем объект webapp телеграма
 		tg.expand();  // раскрывает приложение во весь экран
-
-
-
-
-		let mario = document.getElementById("mario"); //получаем кнопку активировать/деактивировать
-		let albert = document.getElementById("albert");
-
-		mario.addEventListener("click", function(){
-			tg.MainButton.setText("Сообщение отправлено!");
-			tg.MainButton.show();
-			tg.sendData("mario0000");
-		});
-
-		albert.addEventListener("click", function(){
-			tg.MainButton.setText("Сообщение отправлено!");
-			tg.MainButton.show();
-			tg.sendData("albert0000");
-		});
-
-
 		tg.close();  // закрывает веб приложение после нажатия кнопки
-
-
 	</script>
 
 </body>
