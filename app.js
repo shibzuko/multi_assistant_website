@@ -12,3 +12,4 @@ btn.addEventListener("click", function(){
     tg.MainButton.show();
     tg.sendData("sendTestMessage");
 });
+
