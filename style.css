@@ -42,14 +42,11 @@ transition: transform 0.3s; /* Плавное изменение стиля пр
 
 
 .container {
-/* Layout Properties */
-top: 0px;
-left: 0px;
-width: 1080px;
-height: 1920px;
-/* UI Properties */
-background: #F5F5F5 0% 0% no-repeat padding-box;
-opacity: 1;
+    width: 100%;
+    max-width: 1080px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Горизонтальное выравнивание по центру */
+    padding: 20px; /* Добавляем отступы по краям */
+    box-sizing: border-box; /* Учитываем отступы и границы в общей ширине */
 }
 
 
@@ -69,7 +66,7 @@ opacity: 1;
 	background-color: whitesmoke;
 	display: flex;
     flex-direction: column; /* Устанавливаем вертикальное расположение элементов */
-	margin-bottom: 100px; /* Добавляем отступ между блоками */
+	margin-bottom: 60px; /* Добавляем отступ между блоками */
     text-align: center; /* Выравниваем содержимое по центру */
 }
 
@@ -88,4 +85,12 @@ opacity: 1;
 
 .btn:hover {
 	background: red;
+}
+
+
+/* Медиа-запрос для адаптации на узких экранах (например, мобильных устройствах) */
+@media screen and (max-width: 768px) {
+    .inner {
+        grid-template-columns: 1fr; /* Один столбец на узких экранах */
+    }
 }
