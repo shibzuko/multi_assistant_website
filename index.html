@@ -15,10 +15,10 @@
 			<div class="item">
 
 
-					<img class="mario" alt>
-				<a href="#" id="mario">
-					<button class="mario">Mario - персонаж игры</button>
-				</a>
+				<img class="mario" alt>
+
+				<button class="mario" id="mario">Mario - персонаж игры</button>
+
 
 			</div>
 
@@ -28,10 +28,10 @@
 			<div class="item">
 
 
-					<img class="albert">
-				<a href="#">
-					<button class="btn" id="albert">Альберт Эйнштейн - физик-теоретик</button>
-				</a>
+				<img class="albert">
+
+				<button class="btn" id="albert">Альберт Эйнштейн - физик-теоретик</button>
+
 			</div>
 
 		</div>
@@ -49,11 +49,18 @@
 
 
 		let mario = document.getElementById("mario"); //получаем кнопку активировать/деактивировать
+		let albert = document.getElementById("albert");
 
 		mario.addEventListener("click", function(){
 			tg.MainButton.setText("Сообщение отправлено!");
 			tg.MainButton.show();
 			tg.sendData("mario");
+		});
+
+		albert.addEventListener("click", function(){
+			tg.MainButton.setText("Сообщение отправлено!");
+			tg.MainButton.show();
+			tg.sendData("albert");
 		});
 
 
