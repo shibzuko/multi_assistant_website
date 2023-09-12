@@ -57,6 +57,9 @@ opacity: 1;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 200px 200px 200px;
+	display: flex;
+    flex-direction: column; /* Устанавливаем вертикальное расположение элементов */
+    align-items: center; /* Центрируем элементы по горизонтали */
 }
 
 .item {
@@ -64,6 +67,10 @@ opacity: 1;
 	border: 10px black;
 	border-radius: 1%;
 	background-color: whitesmoke;
+	display: flex;
+    flex-direction: column; /* Устанавливаем вертикальное расположение элементов */
+	margin-bottom: 100px; /* Добавляем отступ между блоками */
+    text-align: center; /* Выравниваем содержимое по центру */
 }
 
 .btn {
@@ -76,8 +83,9 @@ opacity: 1;
 	text-transform: uppercase;
 	font-weight: 700;
 	transition: background .2s linear;
+
 }
 
 .btn:hover {
-	background: whitesmoke;
+	background: red;
 }
