@@ -11,26 +11,26 @@ let gpt_3_5_4k = document.getElementById("gpt-3.5-4k"); //получаем кн�
 gpt_3_5_4k.addEventListener("click", function(){
 	tg.MainButton.setText("Сообщение отправлено!");
 	tg.MainButton.show();
-	tg.sendData("gpt-3.5-4k");
+	tg.sendData("gpt-3.5-turbo-0613");
 });
 
 let gpt_3_5_16k = document.getElementById("gpt-3.5-16k");
 gpt_3_5_16k.addEventListener("click", function(){
 	tg.MainButton.setText("Сообщение отправлено!");
 	tg.MainButton.show();
-	tg.sendData("gpt-3.5-16k");
+	tg.sendData("gpt-3.5-turbo-16k-0613");
 });
 
 let gpt_4_8k = document.getElementById("gpt-4-8k"); //получаем кнопку активировать/деактивировать
 gpt_4_8k.addEventListener("click", function(){
 	tg.MainButton.setText("Сообщение отправлено!");
 	tg.MainButton.show();
-	tg.sendData("gpt-4-8k");
+	tg.sendData("gpt-4-0613");
 });
 
 let gpt_4_32k = document.getElementById("gpt-4-32k");
 gpt_4_32k.addEventListener("click", function(){
 	tg.MainButton.setText("Сообщение отправлено!");
 	tg.MainButton.show();
-	tg.sendData("gpt-4-32k");
+	tg.sendData("gpt-4-32k-0613");
 });
