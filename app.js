@@ -8,28 +8,28 @@ tg.MainButton.color = "#FF00FF";
 
 
 let gpt_3_5_4k = document.getElementById("gpt-3.5-4k"); //получаем кнопку активировать/деактивировать
-mario.addEventListener("click", function(){
+gpt_3_5_4k.addEventListener("click", function(){
 	tg.MainButton.setText("Сообщение отправлено!");
 	tg.MainButton.show();
 	tg.sendData("gpt-3.5-4k");
 });
 
 let gpt_3_5_16k = document.getElementById("gpt-3.5-16k");
-albert.addEventListener("click", function(){
+gpt_3_5_16k.addEventListener("click", function(){
 	tg.MainButton.setText("Сообщение отправлено!");
 	tg.MainButton.show();
 	tg.sendData("gpt-3.5-16k");
 });
 
 let gpt_4_8k = document.getElementById("gpt-4-8k"); //получаем кнопку активировать/деактивировать
-mario.addEventListener("click", function(){
+gpt_4_8k.addEventListener("click", function(){
 	tg.MainButton.setText("Сообщение отправлено!");
 	tg.MainButton.show();
 	tg.sendData("gpt-4-8k");
 });
 
 let gpt_4_32k = document.getElementById("gpt-4-32k");
-albert.addEventListener("click", function(){
+gpt_4_32k.addEventListener("click", function(){
 	tg.MainButton.setText("Сообщение отправлено!");
 	tg.MainButton.show();
 	tg.sendData("gpt-4-32k");
