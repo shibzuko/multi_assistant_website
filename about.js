@@ -1,15 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var elements = document.querySelectorAll('b1, b3, p');
+    var touchedElements = [];
 
-    elements.forEach(function(element) {
-        element.addEventListener('touchstart', function() {
-            element.style.transform = 'scale(1.03)';
-            element.style.boxShadow = '5px 5px 15px rgba(255, 255, 255, 0.1)';
-        });
+    document.addEventListener('touchstart', function(event) {
+        var target = event.target;
 
-        element.addEventListener('touchend', function() {
+        if (target.matches('b1, b3, p')) {
+            touchedElements.push(target);
+            target.style.transform = 'scale(1.03)';
+            target.style.boxShadow = '5px 5px 15px rgba(255, 255, 255, 0.1)';
+        }
+    });
+
+    document.addEventListener('touchend', function() {
+        while (touchedElements.length) {
+            var element = touchedElements.pop();
             element.style.transform = '';
             element.style.boxShadow = '';
-        });
+        }
+    });
+
+    document.addEventListener('touchmove', function() {
+        while (touchedElements.length) {
+            var element = touchedElements.pop();
+            element.style.transform = '';
+            element.style.boxShadow = '';
+        }
     });
 });
