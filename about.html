@@ -11,18 +11,12 @@
             color: #FFFFFF;
             line-height: 1.6;
             background-color: #293A4C;
-            transition: background-color 0.3s;
-            position: relative;
-        }
-
-        body:hover {
-            background-color: #000000;
         }
 
         b1, b3, p {
-            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: transparent;
+            transition: transform 0.3s, box-shadow 0.3s, color 0.3s;
         }
-
 
         b1 {
             font-size: 24px;
@@ -52,20 +46,6 @@
             padding-left: 15px;
         }
 
-        #colorIndicator {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #293A4C, #000000);
-            transition: background 0.3s;
-        }
-
-        body:hover #colorIndicator {
-            background: linear-gradient(45deg, #000000, #293A4C);
-        }
     </style>
 </head>
 <body>
