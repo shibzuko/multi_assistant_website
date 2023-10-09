@@ -28,9 +28,9 @@ gpt_4_8k.addEventListener("click", function(){
 	tg.sendData("gpt-4-0613");
 });
 
-let gpt_4_32k = document.getElementById("gpt-4-32k");
-gpt_4_32k.addEventListener("click", function(){
-	tg.MainButton.setText("Сообщение отправлено!");
-	tg.MainButton.show();
-	tg.sendData("gpt-4-32k-0613");
-});
+//let gpt_4_32k = document.getElementById("gpt-4-32k");
+//gpt_4_32k.addEventListener("click", function(){
+//	tg.MainButton.setText("Сообщение отправлено!");
+//	tg.MainButton.show();
+//	tg.sendData("gpt-4-32k-0613");
+//});
