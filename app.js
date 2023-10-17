@@ -1,12 +1,12 @@
-//let tg = window.Telegram.WebApp;
-//
-//tg.expand();
-//
-//tg.MainButton.textColor = "#FFFFFF";
-//tg.MainButton.color = "#FF00FF";
-//
-//
-//
+let tg = window.Telegram.WebApp;
+
+tg.expand();
+
+tg.MainButton.textColor = "#FFFFFF";
+tg.MainButton.color = "#FF00FF";
+
+
+
 //let gpt_3_5_4k = document.getElementById("gpt-3.5-4k"); //получаем кнопку активировать/деактивировать
 //gpt_3_5_4k.addEventListener("click", function(){
 //	tg.MainButton.setText("Сообщение отправлено!");
