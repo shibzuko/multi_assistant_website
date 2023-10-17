@@ -34,3 +34,7 @@ gpt_4_8k.addEventListener("click", function(){
 //	tg.MainButton.show();
 //	tg.sendData("gpt-4-32k-0613");
 //});
+
+
+
+
