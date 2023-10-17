@@ -17,15 +17,15 @@
     <fieldset class="form-group">
         <legend>Модель GPT</legend>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="preference" id="gpt-3.5-4k" value="gpt-3.5-4k" checked>
+            <input class="form-check-input" type="radio" name="model" id="gpt-3.5-4k" value="gpt-3.5-4k" checked>
             <label class="form-check-label" for="gpt-3.5-4k">GPT-3.5 4k</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="preference" id="gpt-3.5-16k" value="gpt-3.5-16k">
+            <input class="form-check-input" type="radio" name="model" id="gpt-3.5-16k" value="gpt-3.5-16k">
             <label class="form-check-label" for="gpt-3.5-16k">GPT-3.5 16k</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="preference" id="gpt-4-8k" value="gpt-4-8k">
+            <input class="form-check-input" type="radio" name="model" id="gpt-4-8k" value="gpt-4-8k">
             <label class="form-check-label" for="gpt-4-8k">GPT-4 8k</label>
         </div>
     </fieldset>
@@ -45,7 +45,7 @@
 
     <div class="form-group">
         <label for="message">Системный промт (задайте роль для GPT)</label>
-        <textarea name="comment" class="form-control"
+        <textarea name="promt" class="form-control"
                   placeholder="Например: 'Ты полезный помощник в роли Альберта Эйнштейна' или 'Ты учитель английского'"
                   id="message"></textarea>
     </div>
@@ -58,29 +58,29 @@
 
 <!--<div class="container">-->
 <!--    <div class="inner">-->
-<!--&lt;!&ndash;        <div class="item">&ndash;&gt;-->
-<!--&lt;!&ndash;            &lt;!&ndash;				<img class="mario">&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;            <h3>GPT-3.5 4k - быстрая и дешевая моедль. Справляется с большинством задач</h3>&ndash;&gt;-->
-<!--&lt;!&ndash;            <button class="btn" id="gpt-3.5-4k">GPT-3.5 4k</button>&ndash;&gt;-->
-<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--        <div class="item">-->
+<!--            &lt;!&ndash;				<img class="mario">&ndash;&gt;-->
+<!--            <h3>GPT-3.5 4k - быстрая и дешевая моедль. Справляется с большинством задач</h3>-->
+<!--            <button class="btn" id="gpt-3.5-4k">GPT-3.5 4k</button>-->
+<!--        </div>-->
 
-<!--&lt;!&ndash;        <div class="item">&ndash;&gt;-->
-<!--&lt;!&ndash;            &lt;!&ndash;				<img class="albert">&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;            <h3>GPT-3.5 16k - быстрая моедль, дороже предыдущей. Принимает в 4 раза больше данных за раз</h3>&ndash;&gt;-->
-<!--&lt;!&ndash;            <button class="btn" id="gpt-3.5-16k">GPT-3.5 16k</button>&ndash;&gt;-->
-<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--        <div class="item">-->
+<!--            &lt;!&ndash;				<img class="albert">&ndash;&gt;-->
+<!--            <h3>GPT-3.5 16k - быстрая моедль, дороже предыдущей. Принимает в 4 раза больше данных за раз</h3>-->
+<!--            <button class="btn" id="gpt-3.5-16k">GPT-3.5 16k</button>-->
+<!--        </div>-->
 
-<!--&lt;!&ndash;        <div class="item">&ndash;&gt;-->
-<!--&lt;!&ndash;            &lt;!&ndash;				<img class="albert">&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;            <h3>GPT-4 8k - очень умная, но медленная модель. Дороже предыдущих</h3>&ndash;&gt;-->
-<!--&lt;!&ndash;            <button class="btn" id="gpt-4-8k">GPT-4 8k</button>&ndash;&gt;-->
-<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--        <div class="item">-->
+<!--            &lt;!&ndash;				<img class="albert">&ndash;&gt;-->
+<!--            <h3>GPT-4 8k - очень умная, но медленная модель. Дороже предыдущих</h3>-->
+<!--            <button class="btn" id="gpt-4-8k">GPT-4 8k</button>-->
+<!--        </div>-->
 
-<!--        &lt;!&ndash;			<div class="item">&ndash;&gt;-->
-<!--        &lt;!&ndash;&lt;!&ndash;				<img class="albert">&ndash;&gt;&ndash;&gt;-->
-<!--        &lt;!&ndash;				<h3>GPT-4 32k - Умная, медленная и самая дорогая модель. Принимает в 4 раза больше данных за раз</h3>&ndash;&gt;-->
-<!--        &lt;!&ndash;				<button class="btn" id="gpt-4-32k">GPT-4 32k</button>&ndash;&gt;-->
-<!--        &lt;!&ndash;			</div>&ndash;&gt;-->
+<!--        			<div class="item">-->
+<!--        &lt;!&ndash;				<img class="albert">&ndash;&gt;-->
+<!--        				<h3>GPT-4 32k - Умная, медленная и самая дорогая модель. Принимает в 4 раза больше данных за раз</h3>-->
+<!--        				<button class="btn" id="gpt-4-32k">GPT-4 32k</button>-->
+<!--        			</div>-->
 
 <!--    </div>-->
 <!--</div>-->
