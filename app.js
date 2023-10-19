@@ -21,7 +21,7 @@ document.querySelector("form").addEventListener("submit", function(event){
     tg.MainButton.show();
 
     // Вы можете форматировать сообщение так, как вам нужно
-    let message = `Model: ${model}\nTokens: ${numTokens}\nTemperature: ${temperature}\nComment: ${comment}`;
+    let message = {'Model': ${model}, 'Tokens': ${numTokens}, 'Temperature': ${temperature}, Comment: ${comment}};
 
     tg.sendData(message); // Отправка данных
 });
