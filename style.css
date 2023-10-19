@@ -6,7 +6,7 @@ body {
     background-size: 600% 100%;             /* Размер фонового градиента */
     color: #fff;                            /* Цвет текста */
     height: 100vh;                          /* Высота */
-    animation: Gradient 15s ease infinite;  /* Анимация для градиента */
+    animation: Gradient 12s ease infinite;  /* Анимация для градиента */
 }
 
 /* Анимация для градиента фона */

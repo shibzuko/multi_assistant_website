@@ -1,6 +1,6 @@
 //Изменение диапазона значений:
 document.addEventListener("DOMContentLoaded", function() {
-    const modelRadios = document.querySelectorAll('input[name="preference"]');
+    const modelRadios = document.querySelectorAll('input[name="model"]');
     const tokenInput = document.getElementById("num_tokens");
 
     modelRadios.forEach(radio => {
