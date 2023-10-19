@@ -3,7 +3,7 @@ let tg = window.Telegram.WebApp;
 tg.expand();
 
 tg.MainButton.textColor = "#FFFFFF";
-tg.MainButton.color = "#FF00FF";
+tg.MainButton.color = "#0BAC00";
 
 document.querySelector("form").addEventListener("submit", function(event){
     event.preventDefault(); // Предотвращаем отправку формы
@@ -21,7 +21,13 @@ document.querySelector("form").addEventListener("submit", function(event){
     tg.MainButton.show();
 
     // Вы можете форматировать сообщение так, как вам нужно
-    let message = 'ffff'
+    let message = `Model: ${model}\nTokens: ${numTokens}\nTemperature: ${temperature}\nComment: ${comment}`;
+//        let message = {
+//    'Model': `${model}`,
+//    'Tokens': `${numTokens}`,
+//    'Temperature': `${temperature}`,
+//    'Comment': `${comment}`
+//    };
 
     tg.sendData(message); // Отправка данных
 });
