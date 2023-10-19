@@ -6,7 +6,7 @@
             color: #FFFFFF;  /* Цвет основного текста */
             line-height: 1.6;  /* Межстрочное расстояние */
             background: linear-gradient(33deg, #011749, #00424E, #003C0D); /* Фоновый градиент */
-            animation: Gradient 20s ease infinite;  /* Анимация для градиента */
+            animation: Gradient 15s ease infinite;  /* Анимация для градиента */
             background-size: 200% 100%;             /* Размер фонового градиента */
 
         }

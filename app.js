@@ -14,7 +14,7 @@ document.querySelector("form").addEventListener("submit", function(event){
     let model = formData.get("model");
     let numTokens = formData.get("num_tokens");
     let temperature = formData.get("temperature");
-    let promt formData.get("promt");
+    let prom formData.get("prom");
 
     // Отправка данных в Telegram
     tg.MainButton.setText("Настройки сохранены!");
@@ -25,7 +25,7 @@ document.querySelector("form").addEventListener("submit", function(event){
         'Model': `${model}`,
         'Tokens': `${numTokens}`,
         'Temperature': `${temperature}`,
-        'Promt': `${promt}`
+        'Promt': `${prom}`
     };
 
     let message = JSON.stringify(messageObj);
