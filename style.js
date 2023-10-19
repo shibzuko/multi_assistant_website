@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     modelRadios.forEach(radio => {
         radio.addEventListener("change", function() {
-            switch (this.value) {
+            switch (this.id) {
                 case "gpt-3.5-4k":
                     tokenInput.setAttribute("min", "100");
                     tokenInput.setAttribute("max", "4000");
