@@ -17,16 +17,11 @@ document.querySelector("form").addEventListener("submit", function(event){
     let comment = formData.get("promt");
 
     // Отправка данных в Telegram
-    tg.MainButton.setText("Сообщение отправлено!");
+    tg.MainButton.setText("Настройки сохранены!");
     tg.MainButton.show();
 
     // Вы можете форматировать сообщение так, как вам нужно
-    let message = {
-    'Model': `${model}`,
-    'Tokens': `${numTokens}`,
-    'Temperature': `${temperature}`,
-    'Comment': `${comment}`
-    };
+    let message = 'ffff'
 
     tg.sendData(message); // Отправка данных
 });

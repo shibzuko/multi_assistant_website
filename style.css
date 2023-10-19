@@ -79,7 +79,10 @@ legend {
 /* Стили для меток чекбоксов и радиокнопок */
 .form-check-label {
     cursor: pointer;                        /* Курсор в виде руки */
+
 }
+
+
 
 /* Стили для основных полей ввода */
 .form-control {
@@ -107,7 +110,7 @@ legend {
 
 /* Стили для полей ввода при наведении */
 .form-control:hover {
-    box-shadow: 0 0 5px #FFC312, 0 0 10px #FFC312; /* Тень */
+    box-shadow: 0 0 20px #FFFFFF, 0 0 10px #FFFFFF; /* Тень */
 }
 
 /* Основные стили для кнопок */
@@ -119,4 +122,3 @@ legend {
     background-color: #004033; /* Фоновый градиент */
     border: double 4px transparent;          /* Граница */
     border-radius
-
