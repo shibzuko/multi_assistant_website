@@ -25,7 +25,7 @@ document.querySelector("form").addEventListener("submit", function(event){
         'Model': `${model}`,
         'Tokens': `${numTokens}`,
         'Temperature': `${temperature}`,
-        'Comment': `${comment}`
+        'Promt': `${promt}`
     };
 
     let message = JSON.stringify(messageObj);
