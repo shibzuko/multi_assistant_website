@@ -142,3 +142,18 @@ legend {
     width: 100%; /* Установил ширину */
 
 }
+
+.link_a {
+    display: flex; /* Изменил на flex для корректного выравнивания */
+    justify-content: center; /* Горизонтальное выравнивание по центру */
+    align-items: center; /* Вертикальное выравнивание по центру */
+    padding: 0.5rem 12.5rem;
+    font-size: 0.9rem;
+    font-weight: 200;
+    color: #FFFFFF;
+    background-color: #aaaaaa;
+    border: double 0px transparent;
+    border-radius: 10px; /* Исправил ошибку синтаксиса, добавил значение */
+    width: 50%; /* Установил ширину */
+
+}
