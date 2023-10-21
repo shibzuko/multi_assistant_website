@@ -5,7 +5,7 @@ tg.expand();
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#0BAC00";
 
-document.querySelector("form").addEventListener("submit", function(event){
+document.getElementById("sendModelSettings").addEventListener("click", function(event) {
     event.preventDefault(); // Предотвращаем отправку формы
 
     // Извлечение данных
@@ -31,6 +31,20 @@ document.querySelector("form").addEventListener("submit", function(event){
     let message = JSON.stringify(messageObj);
 
     tg.sendData(message); // Отправка данных
+    tg.MainButton.show();
+});
+
+
+document.getElementById("sendAdvancedSettings").addEventListener("click", function(event) {
+    let other_data = document.querySelector("input[name='other_data']").value;
+
+    let messageObj = {
+        'Other data': other_data,
+    };
+    let message = JSON.stringify(messageObj);
+    tg.sendData(message);
+    tg.MainButton.setText("Продвинутые настройки сохранены!");
+    tg.MainButton.show();
 });
 
 
