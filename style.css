@@ -58,7 +58,7 @@ legend {
 
 /* Стили для групп элементов формы */
 .form-group {
-    margin-bottom: 1rem;                  /* Отступ снизу */
+    margin-bottom: 0.5rem;                  /* Отступ снизу */
 }
 
 /* Стили для чекбоксов и радиокнопок */
@@ -125,6 +125,7 @@ legend {
     border: double 4px transparent;
     border-radius: 10px; /* Исправил ошибку синтаксиса, добавил значение */
     width: 100%; /* Установил ширину */
+    margin-bottom: 8%
 }
 
 .link_p {
@@ -137,7 +138,7 @@ legend {
     color: #FFFFFF;
     background-color: #A30000;
     border: double 1px transparent;
-    border-radius: 100px; /* Исправил ошибку синтаксиса, добавил значение */
-    width: 80%; /* Установил ширину */
+    border-radius: 60px; /* Исправил ошибку синтаксиса, добавил значение */
+    width: 100%; /* Установил ширину */
 
 }
