@@ -29,11 +29,11 @@ document.getElementById("sendModelSettings").addEventListener("click", function(
 document.getElementById("sendAdvancedSettings").addEventListener("click", function() {
         const form = document.querySelector('form');
 
-    const other_data = form['other_data'].value;
+    const tokendb = form['tokendb'].value;
 
 
     const messageObj = {
-        'Other data': other_data
+        'Token DB': tokendb
     };
 
     const message = JSON.stringify(messageObj);
