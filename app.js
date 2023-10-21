@@ -1,49 +1,45 @@
 let tg = window.Telegram.WebApp;
-
 tg.expand();
 
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#0BAC00";
 
-document.getElementById("sendModelSettings").addEventListener("click", function(event) {
-    event.preventDefault(); // Предотвращаем отправку формы
+document.getElementById("sendModelSettings").addEventListener("click", function() {
+    const form = document.querySelector('form');
 
-    // Извлечение данных
-    let formData = new FormData(event.target); // event.target - это наша форма
+    const model = form['model'].value;
+    const numTokens = form['num_tokens'].value;
+    const temperature = form['temperature'].value;
+    const promt = form['promt'].value;
 
-    let model = formData.get("model");
-    let numTokens = formData.get("num_tokens");
-    let temperature = formData.get("temperature");
-    let promt = formData.get("promt");
-
-    // Отправка данных в Telegram
-    tg.MainButton.setText("Настройки сохранены!");
-    tg.MainButton.show();
-
-    // Вы можете форматировать сообщение так, как вам нужно
-    let messageObj = {
-        'Model': `${model}`,
-        'Tokens': `${numTokens}`,
-        'Temperature': `${temperature}`,
-        'Promt': `${promt}`
+    const messageObj = {
+        'Model': model,
+        'Tokens': numTokens,
+        'Temperature': temperature,
+        'Promt': promt
     };
 
-    let message = JSON.stringify(messageObj);
+    const message = JSON.stringify(messageObj);
 
-    tg.sendData(message); // Отправка данных
+    tg.sendData(message);
+    tg.MainButton.setText("Настройки сохранены!");
     tg.MainButton.show();
 });
 
+document.getElementById("sendAdvancedSettings").addEventListener("click", function() {
+        const form = document.querySelector('form');
 
-document.getElementById("sendAdvancedSettings").addEventListener("click", function(event) {
-    let other_data = document.querySelector("input[name='other_data']").value;
+    const other_data = form['other_data'].value;
 
-    let messageObj = {
-        'Other data': other_data,
+
+    const messageObj = {
+        'Other data': other_data
     };
-    let message = JSON.stringify(messageObj);
+
+    const message = JSON.stringify(messageObj);
+
     tg.sendData(message);
-    tg.MainButton.setText("Продвинутые настройки сохранены!");
+    tg.MainButton.setText("Настройки сохранены!");
     tg.MainButton.show();
 });
 
