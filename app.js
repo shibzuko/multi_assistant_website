@@ -39,7 +39,7 @@ document.getElementById("sendAdvancedSettings").addEventListener("click", functi
     const message = JSON.stringify(messageObj);
 
     tg.sendData(message);
-    tg.MainButton.setText("Настройки сохранены!");
+    tg.MainButton.setText("Токен добавлен!");
     tg.MainButton.show();
 });
 
