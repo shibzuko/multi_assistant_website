@@ -14,57 +14,90 @@
 
 <form action="#" method="post" target="_blank">
     <h2>Системные настройки GPT</h2>
+
+
     <fieldset class="form-group">
-        <legend>Модель GPT</legend>
+        <legend>Режим работы</legend>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="model" id="gpt-3.5-4k" value="gpt-3.5-turbo-0613" checked>
-            <label class="form-check-label" for="gpt-3.5-4k">GPT-3.5 4k</label>
+            <input class="form-check-input" type="radio" name="mode" id="chatgpt" value="chatgpt" checked>
+            <label class="form-check-label" for="chatgpt">ChatGPT</label>
+            <fieldset class="form-group">
+                    <p></p>
+                    <p>Выберите модель GPT:</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="model" id="gpt-3.5" value="gpt-3.5-turbo-1106" checked>
+                        <label class="form-check-label" for="gpt-3.5">GPT-3.5 Turbo</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="model" id="gpt-4-8k" value="gpt-4-0613">
+                        <label class="form-check-label" for="gpt-4-8k">GPT-4 (дорогая модель)</label>
+                    </div>
+
+            </fieldset>
         </div>
+
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="model" id="gpt-3.5-16k" value="gpt-3.5-turbo-16k-0613">
-            <label class="form-check-label" for="gpt-3.5-16k">GPT-3.5 16k</label>
+            <input class="form-check-input" type="radio" name="mode" id="tts-1" value="tts-1-1106">
+            <label class="form-check-label" for="tts-1">TTS - текст в аудио</label>
         </div>
+
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="model" id="gpt-4-8k" value="gpt-4-0613">
-            <label class="form-check-label" for="gpt-4-8k">GPT-4 8k</label>
+            <input class="form-check-input" type="radio" name="mode" id="tts-1-hd" value="tts-1-hd-1106">
+            <label class="form-check-label" for="tts-1-hd">TTS-HD - текст в аудио высокого качества</label>
         </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="mode" id="whisper-1" value="whisper-1">
+            <label class="form-check-label" for="whisper-1">Whisper - аудио в текст</label>
+            <fieldset class="form-group">
+                    <p></p>
+                    <p>Ответ получать в виде:</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="speech" id="audio" value="audio" checked>
+                        <label class="form-check-label" for="audio">Аудио</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="speech" id="text" value="text">
+                        <label class="form-check-label" for="text">Текста</label>
+                    </div>
+
+            </fieldset>
+        </div>
+
     </fieldset>
 
     <fieldset class="form-group">
 <!--        <legend>Продвинутые настройки</legend>-->
-        <div class="form-group">
-            <label for="num_tokens">Количество токенов:</label>
-            <input type="number" class="form-control" name="num_tokens" placeholder="От 100 до 4000" id="num_tokens" min="100" max="4000">
-        </div>
+<!--        <div class="form-group">-->
+<!--            <label for="num_tokens">Количество токенов:</label>-->
+<!--            <input type="number" class="form-control" name="num_tokens" placeholder="От 100 до 4000" id="num_tokens" min="100" max="4000">-->
+<!--        </div>-->
 
-        <div class="form-group">
-            <label for="temperature">Температура ответа:</label>
-            <input type="number" class="form-control" name="temperature" placeholder="От 0,0 до 2,0 с шагом 0,01" id="temperature" min="0" max="2" step="0.01">
-        </div>
+<!--        <div class="form-group">-->
+<!--            <label for="temperature">Температура ответа:</label>-->
+<!--            <input type="number" class="form-control" name="temperature" placeholder="От 0,0 до 2,0 с шагом 0,01" id="temperature" min="0" max="2" step="0.01">-->
+<!--        </div>-->
     </fieldset>
 
-    <div class="form-group">
-        <label for="promt">Системный промт</label>
-        <textarea name="promt" class="form-control"
-                  placeholder="Например: 'Ты полезный помощник в роли профессора физики'"
-                  id="promt"></textarea>
-    </div>
-
 <!--    <div class="form-group">-->
-<!--        <label for="vectordb">*Модуль в разработке*</label>-->
-<!--        <textarea name="VectorDB" class="form-control"-->
-<!--                  placeholder="Токен доступа к БД"-->
-<!--                  id="vectordb"></textarea>-->
+<!--        <label for="promt">Системный промт</label>-->
+<!--        <textarea name="promt" class="form-control"-->
+<!--                  placeholder="Например: 'Ты полезный помощник в роли профессора физики'"-->
+<!--                  id="promt"></textarea>-->
 <!--    </div>-->
+
+    <div class="form-group">
+        <label>*Модуль в разработке*</label>
+    </div>
 
     <div>
         <button type="button" class="btn btn-primary" id="sendModelSettings">Сохранить настройки модели</button>
     </div>
     <p>
 
-    <div>
-        <a href="link_pinecone.html" class="link_p btn-info" role="button">Дообучение ИИ</a>
-    </div>
+<!--    <div>-->
+<!--        <a href="link_pinecone.html" class="link_p btn-info" role="button">Дообучение ИИ</a>-->
+<!--    </div>-->
 
 </form>
 
@@ -72,97 +105,89 @@
 
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
-<script>let tg = window.Telegram.WebApp;
-tg.expand();
-
-tg.MainButton.textColor = "#FFFFFF";
-tg.MainButton.color = "#0BAC00";
-
-document.getElementById("sendModelSettings").addEventListener("click", function() {
-    const form = document.querySelector('form');
-
-    const model = form['model'].value;
-    const numTokens = form['num_tokens'].value;
-    const temperature = form['temperature'].value;
-    const promt = form['promt'].value;
-
-    const messageObj = {
-        'Model': model,
-        'Tokens': numTokens,
-        'Temperature': temperature,
-        'Promt': promt
-    };
-
-    const message = JSON.stringify(messageObj);
-
-    tg.sendData(message);
-    tg.MainButton.setText("Настройки сохранены!");
-    tg.MainButton.show();
-});
-
-document.getElementById("sendAdvancedSettings").addEventListener("click", function() {
-        const form = document.querySelector('form');
-
-    const tokendb = form['tokendb'].value;
-
-
-    const messageObj = {
-        'Token DB': tokendb
-    };
-
-    const message = JSON.stringify(messageObj);
-
-    tg.sendData(message);
-    tg.MainButton.setText("Токен добавлен!");
-    tg.MainButton.show();
-});
-</script>
 <script>
-    //Изменение диапазона значений:
-    document.addEventListener("DOMContentLoaded", function() {
-        const modelRadios = document.querySelectorAll('input[name="model"]');
-        const tokenInput = document.getElementById("num_tokens");
+    let tg = window.Telegram.WebApp;
+    tg.expand();
 
-        modelRadios.forEach(radio => {
-            radio.addEventListener("change", function() {
-                switch (this.id) {
-                    case "gpt-3.5-4k":
-                        tokenInput.setAttribute("min", "100");
-                        tokenInput.setAttribute("max", "4000");
-                        tokenInput.setAttribute("placeholder", "От 100 до 4000");
-                        break;
-                    case "gpt-3.5-16k":
-                        tokenInput.setAttribute("min", "100");
-                        tokenInput.setAttribute("max", "16000");
-                        tokenInput.setAttribute("placeholder", "От 100 до 16000");
-                        break;
-                    case "gpt-4-8k":
-                        tokenInput.setAttribute("min", "100");
-                        tokenInput.setAttribute("max", "8000");
-                        tokenInput.setAttribute("placeholder", "От 100 до 8000");
-                        break;
-                }
-            });
-        });
-    });
+    tg.MainButton.textColor = "#FFFFFF";
+    tg.MainButton.color = "#0BAC00";
 
-    //Сообщение о некорректности данных:
-    document.querySelector('form').addEventListener('submit', function(e) {
-        const tokensValue = parseInt(tokenInput.value, 10);
-        const temperatureValue = parseFloat(document.getElementById("temperature").value);
-
-        if (tokensValue < 100 || tokensValue > parseInt(tokenInput.getAttribute("max"), 10) || isNaN(tokensValue)) {
-            alert('Введите корректное количество токенов!');
-            e.preventDefault();
+    // Функция для получения выбранного значения из группы радио-кнопок
+    function getRadioValue(name) {
+        const radios = document.getElementsByName(name);
+        for (let radio of radios) {
+            if (radio.checked) {
+                return radio.value;
+            }
         }
+        return null; // или значение по умолчанию, если ни одна кнопка не выбрана
+    }
 
-        if (temperatureValue < 0 || temperatureValue > 2 || isNaN(temperatureValue)) {
-            alert('Введите корректное значение температуры!');
-            e.preventDefault();
-        }
+    document.getElementById("sendModelSettings").addEventListener("click", function() {
+        // Получаем выбранное значение для режима и модели
+        const mode = getRadioValue('mode');
+        const model = getRadioValue('model');
+        const speech = getRadioValue('speech'); // Если есть такая группа радио-кнопок
+
+        const messageObj = {
+            'Mode': mode,
+            'Model': model,
+            'Speech': speech
+        };
+
+        const message = JSON.stringify(messageObj);
+
+        tg.sendData(message);
+        tg.MainButton.setText("Настройки сохранены!");
+        tg.MainButton.show();
     });
-
 </script>
+<!--<script>-->
+<!--    //Изменение диапазона значений:-->
+<!--    document.addEventListener("DOMContentLoaded", function() {-->
+<!--        const modelRadios = document.querySelectorAll('input[name="model"]');-->
+<!--        const tokenInput = document.getElementById("num_tokens");-->
+
+<!--        modelRadios.forEach(radio => {-->
+<!--            radio.addEventListener("change", function() {-->
+<!--                switch (this.id) {-->
+<!--                    case "gpt-3.5-turbo-1106":-->
+<!--                        tokenInput.setAttribute("min", "100");-->
+<!--                        tokenInput.setAttribute("max", "4000");-->
+<!--                        tokenInput.setAttribute("placeholder", "От 100 до 4000");-->
+<!--                        break;-->
+<!--                    case "gpt-3.5-16k":-->
+<!--                        tokenInput.setAttribute("min", "100");-->
+<!--                        tokenInput.setAttribute("max", "16000");-->
+<!--                        tokenInput.setAttribute("placeholder", "От 100 до 16000");-->
+<!--                        break;-->
+<!--                    case "gpt-4-8k":-->
+<!--                        tokenInput.setAttribute("min", "100");-->
+<!--                        tokenInput.setAttribute("max", "8000");-->
+<!--                        tokenInput.setAttribute("placeholder", "От 100 до 8000");-->
+<!--                        break;-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    });-->
+
+<!--    //Сообщение о некорректности данных:-->
+<!--    document.querySelector('form').addEventListener('submit', function(e) {-->
+<!--        const tokensValue = parseInt(tokenInput.value, 10);-->
+<!--        const temperatureValue = parseFloat(document.getElementById("temperature").value);-->
+
+<!--        if (tokensValue < 100 || tokensValue > parseInt(tokenInput.getAttribute("max"), 10) || isNaN(tokensValue)) {-->
+<!--            alert('Введите корректное количество токенов!');-->
+<!--            e.preventDefault();-->
+<!--        }-->
+
+<!--        if (temperatureValue < 0 || temperatureValue > 2 || isNaN(temperatureValue)) {-->
+<!--            alert('Введите корректное значение температуры!');-->
+<!--            e.preventDefault();-->
+<!--        }-->
+<!--    });-->
+
+<!--</script>-->
 <script>
     let tg = window.Telegram.WebApp; //получаем объект webapp телеграма
     tg.expand();  // раскрывает приложение во весь экран

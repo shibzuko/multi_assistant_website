@@ -5,9 +5,10 @@ tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#0BAC00";
 
 document.getElementById("sendModelSettings").addEventListener("click", function() {
+
     const form = document.querySelector('form');
 
-    const model = form['model'].value;
+    const mode = form['mode'].value;
     const numTokens = form['num_tokens'].value;
     const temperature = form['temperature'].value;
     const promt = form['promt'].value;
