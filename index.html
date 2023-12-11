@@ -49,19 +49,19 @@
         <div class="form-check">
             <input class="form-check-input" type="radio" name="mode" id="whisper-1" value="whisper-1">
             <label class="form-check-label" for="whisper-1">Whisper - аудио в текст</label>
-            <fieldset class="form-group">
-                    <p></p>
-                    <p>Ответ получать в виде:</p>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="speech" id="audio" value="audio" checked>
-                        <label class="form-check-label" for="audio">Аудио</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="speech" id="text" value="text">
-                        <label class="form-check-label" for="text">Текста</label>
-                    </div>
+<!--            <fieldset class="form-group">-->
+<!--                    <p></p>-->
+<!--                    <p>Ответ получать в виде:</p>-->
+<!--                    <div class="form-check">-->
+<!--                        <input class="form-check-input" type="radio" name="speech" id="audio" value="audio" checked>-->
+<!--                        <label class="form-check-label" for="audio">Аудио</label>-->
+<!--                    </div>-->
+<!--                    <div class="form-check">-->
+<!--                        <input class="form-check-input" type="radio" name="speech" id="text" value="text">-->
+<!--                        <label class="form-check-label" for="text">Текста</label>-->
+<!--                    </div>-->
 
-            </fieldset>
+<!--            </fieldset>-->
         </div>
 
     </fieldset>
@@ -127,12 +127,12 @@
         // Получаем выбранное значение для режима и модели
         const mode = getRadioValue('mode');
         const model = getRadioValue('model');
-        const speech = getRadioValue('speech'); // Если есть такая группа радио-кнопок
+<!--        const speech = getRadioValue('speech'); // Если есть такая группа радио-кнопок-->
 
         const messageObj = {
             'Mode': mode,
             'Model': model,
-            'Speech': speech
+<!--            'Speech': speech-->
         };
 
         const message = JSON.stringify(messageObj);
