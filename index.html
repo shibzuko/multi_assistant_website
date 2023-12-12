@@ -128,44 +128,38 @@
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
-let tg = window.Telegram.WebApp;
-tg.expand();
+        document.getElementById("sendModelSettings").addEventListener("click", function() {
+            const form = document.querySelector('form');
 
-tg.MainButton.textColor = "#FFFFFF";
-tg.MainButton.color = "#0BAC00";
+            // Получаем значения из формы
+            const mode = form['mode'].value; // Это работает, поскольку есть input с именем 'mode'
 
-document.getElementById("sendModelSettings").addEventListener("click", function() {
-    const form = document.querySelector('form');
+            // Объявляем переменные здесь, чтобы они были доступны в текущей области видимости
+            let model_gpt, model_tts;
+            if (mode === 'chatgpt') {
+                model_gpt = form['model_gpt'].value; // Выбранная модель GPT
+            } else if (mode === 'tts-1-1106') {
+                model_tts = form['model_tts'].value; // Выбранная модель TTS
+            }
 
-    // Переменные для режима работы и выбранной модели
-    const mode = form['mode'].value;
-    const model = form['model'].value; // Теперь выбираем модель, которая действительно есть в форме
+            const tts_voice = form['tts_voice'] ? form['tts_voice'].value : undefined; // Выбранный голос TTS
 
-    // Переменные для дополнительных настроек, предполагаем что они есть в форме
-    const numTokens = form['num_tokens'] ? form['num_tokens'].value : undefined;
-    const temperature = form['temperature'] ? form['temperature'].value : undefined;
-    const prompt = form['prompt'] ? form['prompt'].value : undefined;
+            const messageObj = {
+                'mode': mode,
+                'model_gpt': model_gpt,
+                'model_tts': model_tts,
+                'tts_voice': tts_voice
+            };
 
-    // Переменные для TTS
-    const tts = form['tts'] ? form['tts'].value : undefined;
-    const tts_voice = form['tts_voice'] ? form['tts_voice'].value : undefined;
+            // Отфильтруем неопределенные значения
+            const messageObjFiltered = Object.fromEntries(Object.entries(messageObj).filter(([_, v]) => v != null));
 
-    const messageObj = {
-        'mode': mode,
-        'model_gpt': model_gpt,
-        'model_tts': model_tts,
-        'tts_voice': tts_voice
-    };
+            const message = JSON.stringify(messageObjFiltered);
 
-    // Отфильтруем неопределенные значения
-    const messageObjFiltered = Object.fromEntries(Object.entries(messageObj).filter(([_, v]) => v != null));
-
-    const message = JSON.stringify(messageObjFiltered);
-
-    tg.sendData(message);
-    tg.MainButton.setText("Настройки сохранены!");
-    tg.MainButton.show();
-});
+            tg.sendData(message);
+            tg.MainButton.setText("Настройки сохранены!");
+            tg.MainButton.show();
+        });
 </script>
 <!--<script>-->
 <!--    //Изменение диапазона значений:-->
