@@ -3,7 +3,7 @@
     appearance: none; /* Современные браузеры */
     -moz-appearance: none; /* Firefox */
     -webkit-appearance: none; /* Safari и Chrome */
-    margin-right: 5px; /* Добавляем отступ справа для метки */
+    margin-right: 10px; /* Добавляем отступ справа для метки */
     border: 1px solid #ddd; /* Добавляем границу для кастомного маркера */
     height: 20px; /* Высота для кастомного маркера */
     width: 20px; /* Ширина для кастомного маркера */
