@@ -13,7 +13,7 @@
 <body class="container mt-4">
 
 <form action="#" method="post" target="_blank">
-    <h2>Системные настройки GPT1111</h2>
+    <h2>Системные настройки GPT2222</h2>
 
 
     <fieldset class="form-group">
@@ -103,46 +103,38 @@
 
 </form>
 
-<script>
-    document.querySelectorAll('input[name="mode"]').forEach(function(radio) {
-        radio.addEventListener('change', function() {
-            const chatGptSettings = document.getElementById('chatgpt_settings');
-            const ttsSettings = document.getElementById('tts_settings');
-            const whisperSettings = document.getElementById('whisper_settings');
 
-            chatGptSettings.classList.remove('open');
-            ttsSettings.classList.remove('open');
-            whisperSettings.classList.remove('open');
 
-            if (this.value === 'chatgpt') {
-                chatGptSettings.classList.add('open');
-            } else if (this.value === 'tts-1-1106') {
-                ttsSettings.classList.add('open');
-            } else if (this.value === 'whisper-1') {
-                whisperSettings.classList.add('open');
-            }
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        document.querySelectorAll('input[name="mode"]').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                const chatGptSettings = document.getElementById('chatgpt_settings');
+                const ttsSettings = document.getElementById('tts_settings');
+                const whisperSettings = document.getElementById('whisper_settings');
+
+                chatGptSettings.classList.remove('open');
+                ttsSettings.classList.remove('open');
+                whisperSettings.classList.remove('open');
+
+                if (this.value === 'chatgpt') {
+                    chatGptSettings.classList.add('open');
+                } else if (this.value === 'tts-1-1106') {
+                    ttsSettings.classList.add('open');
+                } else if (this.value === 'whisper-1') {
+                    whisperSettings.classList.add('open');
+                }
+            });
         });
-    });
-</script>
 
-
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
-<script>
         document.getElementById("sendModelSettings").addEventListener("click", function() {
             const form = document.querySelector('form');
 
-            // Получаем значения из формы
-            const mode = form['mode'].value; // Это работает, поскольку есть input с именем 'mode'
-
-            // Объявляем переменные здесь, чтобы они были доступны в текущей области видимости
-            let model_gpt, model_tts;
-            if (mode === 'chatgpt') {
-                model_gpt = form['model_gpt'].value; // Выбранная модель GPT
-            } else if (mode === 'tts-1-1106') {
-                model_tts = form['model_tts'].value; // Выбранная модель TTS
-            }
-
-            const tts_voice = form['tts_voice'] ? form['tts_voice'].value : undefined; // Выбранный голос TTS
+            const mode = form['mode'].value;
+            let model_gpt = form['model_gpt'] ? form['model_gpt'].value : undefined;
+            let model_tts = form['model_tts'] ? form['model_tts'].value : undefined;
+            let tts_voice = form.querySelector('input[name="tts_voice"]:checked') ? form.querySelector('input[name="tts_voice"]:checked').value : undefined;
 
             const messageObj = {
                 'mode': mode,
@@ -151,23 +143,15 @@
                 'tts_voice': tts_voice
             };
 
-            // Отфильтруем неопределенные значения
             const messageObjFiltered = Object.fromEntries(Object.entries(messageObj).filter(([_, v]) => v != null));
 
             const message = JSON.stringify(messageObjFiltered);
 
+            let tg = window.Telegram.WebApp;
             tg.sendData(message);
             tg.MainButton.setText("Настройки сохранены!");
             tg.MainButton.show();
         });
-</script>
-
-<!--</script>-->
-<!--<script>-->
-<!--    let tg = window.Telegram.WebApp; //получаем объект webapp телеграма-->
-<!--    tg.expand();  // раскрывает приложение во весь экран-->
-<!--    tg.close();  // закрывает веб приложение после нажатия кнопки-->
-<!--</script>-->
-
+    </script>
 </body>
 </html>
