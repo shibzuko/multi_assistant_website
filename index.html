@@ -148,9 +148,11 @@
             const message = JSON.stringify(messageObjFiltered);
 
             let tg = window.Telegram.WebApp;
+            tg.expand();
             tg.sendData(message);
             tg.MainButton.setText("Настройки сохранены!");
             tg.MainButton.show();
+            td.close()
         });
     </script>
 </body>
