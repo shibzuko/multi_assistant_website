@@ -19,7 +19,7 @@
     <fieldset class="form-group">
         <legend>Режим работы бота</legend>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="mode" id="chatgpt" value="chatgpt" checked>
+            <input class="form-check-input" type="radio" name="mode" id="chatgpt" value="global_chatgpt" checked>
             <label class="form-check-label" for="chatgpt">ChatGPT</label>
         </div>
 
@@ -118,7 +118,7 @@
                 ttsSettings.classList.remove('open');
                 whisperSettings.classList.remove('open');
 
-                if (this.value === 'chatgpt') {
+                if (this.value === 'global_chatgpt') {
                     chatGptSettings.classList.add('open');
                 } else if (this.value === 'tts') {
                     ttsSettings.classList.add('open');
