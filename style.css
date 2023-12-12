@@ -1,3 +1,44 @@
+/* Скрываем стандартный радио маркер */
+.form-check-input {
+    appearance: none; /* Современные браузеры */
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari и Chrome */
+    margin-right: 10px; /* Добавляем отступ справа для метки */
+    border: 1px solid #ddd; /* Добавляем границу для кастомного маркера */
+    height: 20px; /* Высота для кастомного маркера */
+    width: 20px; /* Ширина для кастомного маркера */
+    border-radius: 35%; /* Делаем круглым */
+    vertical-align: middle; /* Выравниваем по центру вертикально */
+    position: relative; /* Относительное позиционирование для псевдоэлементов */
+}
+
+/* Стилизация метки при активном радио маркере */
+.form-check-input:checked {
+    background-color: #E50019; /* Цвет фона при выборе */
+    border-color: #E50019; /* Цвет границы при выборе */
+}
+
+/* Добавляем кастомный индикатор выбора */
+.form-check-input:checked::after {
+    content: ""; /* Необходимо для создания псевдоэлемента */
+    position: absolute; /* Абсолютное позиционирование относительно родителя */
+    top: 50%; /* Смещаем в центр по вертикали */
+    left: 50%; /* Смещаем в центр по горизонтали */
+    transform: translate(-50%, -50%); /* Центрируем псевдоэлемент */
+    width: 10px; /* Ширина индикатора */
+    height: 10px; /* Высота индикатора */
+    border-radius: 15%; /* Делаем индикатор круглым */
+    background: #090B62; /* Цвет индикатора */
+}
+
+/* Стиль для метки рядом с кастомным радио маркером */
+.form-check-label {
+    cursor: pointer; /* Курсор в виде руки при наведении */
+    display: inline-block; /* Для лучшего контроля над макетом */
+    vertical-align: middle; /* Выравниваем по центру вертикально */
+}
+
+
 /* Основные стили для body */
 body {
     font-family: 'Verdana', sans-serif;      /* Шрифт */
@@ -72,7 +113,7 @@ legend {
 .form-check-input {
 
     cursor: pointer;                        /* Курсор в виде руки */
-    border: 4px solid #ffffff;                 /* Граница */
+    border: 1px solid #585858;                 /* Граница */
     background: transparent;                /* Фон */
 }
 
@@ -156,4 +197,33 @@ legend {
     border-radius: 10px; /* Исправил ошибку синтаксиса, добавил значение */
     width: 50%; /* Установил ширину */
 
+}
+
+
+/* Анимация выпадающего меню */
+.form-group-transition {
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out, margin 0.5s ease-in-out;
+    max-height: 0;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+}
+
+.form-group-transition.open {
+    max-height: 1000px; /* Достаточно большое значение для вмещения содержимого */
+    padding: 1rem 1.5rem;
+    margin: 1rem auto;
+}
+
+
+/* Стили для радиокнопок при наведении */
+.form-check-input:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Слегка меняем фон */
+    border-color: #ffffff; /* Белая граница */
+}
+
+/* Стили для активного состояния радиокнопок */
+.form-check-input:checked {
+    background-color: #ffffff; /* Белый фон для активной кнопки */
+    border-color: #004033; /* Цвет границы */
 }

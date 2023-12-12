@@ -21,70 +21,77 @@
         <div class="form-check">
             <input class="form-check-input" type="radio" name="mode" id="chatgpt" value="chatgpt" checked>
             <label class="form-check-label" for="chatgpt">ChatGPT</label>
-            <fieldset class="form-group">
-                    <p></p>
-                    <p>Выберите модель GPT:</p>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="model" id="gpt-3.5" value="gpt-3.5-turbo-1106" checked>
-                        <label class="form-check-label" for="gpt-3.5">GPT-3.5 Turbo</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="model" id="gpt-4-8k" value="gpt-4-0613">
-                        <label class="form-check-label" for="gpt-4-8k">GPT-4 (дорогая модель)</label>
-                    </div>
-
-            </fieldset>
         </div>
 
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="mode" id="tts-1" value="tts-1-1106">
-            <label class="form-check-label" for="tts-1">TTS - текст в аудио</label>
-        </div>
+        <fieldset class="form-group form-group-transition" id="chatgpt_settings">
+            <p></p>
+            <p>Выберите модель GPT:</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="model" id="gpt-3.5" value="gpt-3.5-turbo-1106" checked>
+                <label class="form-check-label" for="gpt-3.5">GPT-3.5 Turbo</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="model" id="gpt-4-8k" value="gpt-4-0613">
+                <label class="form-check-label" for="gpt-4-8k">GPT-4 (дорогая модель)</label>
+            </div>
+
+        </fieldset>
+
+
 
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="mode" id="tts-1-hd" value="tts-1-hd-1106">
-            <label class="form-check-label" for="tts-1-hd">TTS-HD - текст в аудио высокого качества</label>
+            <input class="form-check-input" type="radio" name="mode" id="generate_audio" value="tts-1-1106">
+            <label class="form-check-label" for="tts-1">Текст в аудио</label>
         </div>
+        <p>Выберите модель:</p>
+        <fieldset class="form-group form-group-transition" id="tts_settings">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tts" id="tts-1" value="tts-1-1106">
+                <label class="form-check-label" for="tts-1">TTS</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tts" id="tts-1-hd" value="tts-1-hd-1106">
+                <label class="form-check-label" for="tts-1-hd">TTS-HD</label>
+            </div>
+            <p>Выбрать голос для озвучки</p>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tts_voice" id="onyx" value="onyx">
+                <label class="form-check-label" for="onyx">Onyx</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tts_voice" id="alloy" value="alloy">
+                <label class="form-check-label" for="alloy">Alloy</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tts_voice" id="echo" value="echo">
+                <label class="form-check-label" for="echo">Echo</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tts_voice" id="fable" value="fable">
+                <label class="form-check-label" for="fable">Fable</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tts_voice" id="nova" value="nova">
+                <label class="form-check-label" for="nova">Nova</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tts_voice" id="shimmer" value="shimmer">
+                <label class="form-check-label" for="shimmer">Shimmer</label>
+            </div>
+        </fieldset>
+
 
         <div class="form-check">
             <input class="form-check-input" type="radio" name="mode" id="whisper-1" value="whisper-1">
             <label class="form-check-label" for="whisper-1">Whisper - аудио в текст</label>
-<!--            <fieldset class="form-group">-->
-<!--                    <p></p>-->
-<!--                    <p>Ответ получать в виде:</p>-->
-<!--                    <div class="form-check">-->
-<!--                        <input class="form-check-input" type="radio" name="speech" id="audio" value="audio" checked>-->
-<!--                        <label class="form-check-label" for="audio">Аудио</label>-->
-<!--                    </div>-->
-<!--                    <div class="form-check">-->
-<!--                        <input class="form-check-input" type="radio" name="speech" id="text" value="text">-->
-<!--                        <label class="form-check-label" for="text">Текста</label>-->
-<!--                    </div>-->
-
-<!--            </fieldset>-->
         </div>
-
+        <fieldset class="form-group form-group-transition" id="whisper_settings">
+            <!-- настройки Whisper -->
+        </fieldset>
     </fieldset>
 
-    <fieldset class="form-group">
-<!--        <legend>Продвинутые настройки</legend>-->
-<!--        <div class="form-group">-->
-<!--            <label for="num_tokens">Количество токенов:</label>-->
-<!--            <input type="number" class="form-control" name="num_tokens" placeholder="От 100 до 4000" id="num_tokens" min="100" max="4000">-->
-<!--        </div>-->
 
-<!--        <div class="form-group">-->
-<!--            <label for="temperature">Температура ответа:</label>-->
-<!--            <input type="number" class="form-control" name="temperature" placeholder="От 0,0 до 2,0 с шагом 0,01" id="temperature" min="0" max="2" step="0.01">-->
-<!--        </div>-->
-    </fieldset>
-
-<!--    <div class="form-group">-->
-<!--        <label for="promt">Системный промт</label>-->
-<!--        <textarea name="promt" class="form-control"-->
-<!--                  placeholder="Например: 'Ты полезный помощник в роли профессора физики'"-->
-<!--                  id="promt"></textarea>-->
-<!--    </div>-->
 
     <div class="form-group">
         <label>*Модуль в разработке*</label>
@@ -93,15 +100,30 @@
     <div>
         <button type="button" class="btn btn-primary" id="sendModelSettings">Сохранить настройки модели</button>
     </div>
-    <p>
-
-<!--    <div>-->
-<!--        <a href="link_pinecone.html" class="link_p btn-info" role="button">Дообучение ИИ</a>-->
-<!--    </div>-->
 
 </form>
 
+<script>
+    document.querySelectorAll('input[name="mode"]').forEach(function(radio) {
+        radio.addEventListener('change', function() {
+            const chatGptSettings = document.getElementById('chatgpt_settings');
+            const ttsSettings = document.getElementById('tts_settings');
+            const whisperSettings = document.getElementById('whisper_settings');
 
+            chatGptSettings.classList.remove('open');
+            ttsSettings.classList.remove('open');
+            whisperSettings.classList.remove('open');
+
+            if (this.value === 'chatgpt') {
+                chatGptSettings.classList.add('open');
+            } else if (this.value === 'tts-1-1106') {
+                ttsSettings.classList.add('open');
+            } else if (this.value === 'whisper-1') {
+                whisperSettings.classList.add('open');
+            }
+        });
+    });
+</script>
 
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
