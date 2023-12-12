@@ -159,6 +159,7 @@
             tg.sendData(message);
             tg.MainButton.setText("Настройки сохранены!");
             tg.MainButton.show();
+            tg.close();
         });
 </script>
 <!--<script>-->
@@ -207,11 +208,11 @@
 <!--    });-->
 
 <!--</script>-->
-<script>
-    let tg = window.Telegram.WebApp; //получаем объект webapp телеграма
-    tg.expand();  // раскрывает приложение во весь экран
-    tg.close();  // закрывает веб приложение после нажатия кнопки
-</script>
+<!--<script>-->
+<!--    let tg = window.Telegram.WebApp; //получаем объект webapp телеграма-->
+<!--    tg.expand();  // раскрывает приложение во весь экран-->
+<!--    tg.close();  // закрывает веб приложение после нажатия кнопки-->
+<!--</script>-->
 
 </body>
 </html>
