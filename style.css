@@ -46,7 +46,7 @@ body {
     background: linear-gradient(333deg, #00551F, #5A0943, #4B3074, #00416B, #696AB1); /* Фоновый градиент */
     background-size: 1000% 100%;             /* Размер фонового градиента */
     color: #fff;                            /* Цвет текста */
-    height: 130vh;                          /* Высота */
+    height: 135vh;                          /* Высота */
     animation: Gradient 12s ease infinite;  /* Анимация для градиента */
 }
 
