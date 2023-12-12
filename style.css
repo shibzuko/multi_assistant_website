@@ -86,7 +86,7 @@ h2 {
     letter-spacing: 1px;                    /* Расстояние между символами */
     font-size: 1.5rem;                        /* Размер шрифта */
     text-align: center;                     /* Выравнивание текста по центру */
-    border-bottom: 3px dotted #fff;         /* Граница снизу */
+    border-bottom: 1px solid #fff;         /* Граница снизу */
     padding-bottom: 10px;                   /* Отступ снизу */
 }
 
