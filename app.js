@@ -21,13 +21,10 @@ document.getElementById("sendModelSettings").addEventListener("click", function(
     const tts_voice = form['tts_voice'] ? form['tts_voice'].value : undefined;
 
     const messageObj = {
-        'Mode': mode,
-        'Model': model,
-        'Tokens': numTokens,
-        'Temperature': temperature,
-        'Prompt': prompt,
-        'TTS': tts,
-        'TTS Voice': tts_voice
+        'mode': mode,
+        'model': model,
+        'tts': tts,
+        'tts_voice': tts_voice
     };
 
     // Отфильтруем неопределенные значения
@@ -40,4 +37,3 @@ document.getElementById("sendModelSettings").addEventListener("click", function(
     tg.MainButton.show();
 });
 
-// Возможно, у тебя
