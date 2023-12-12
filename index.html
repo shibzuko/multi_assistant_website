@@ -17,14 +17,13 @@
 
 
     <fieldset class="form-group">
-        <legend>Режим работы</legend>
+        <legend>Режим работы бота</legend>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="mode" id="chatgpt" value="chatgpt" checked>
             <label class="form-check-label" for="chatgpt">ChatGPT</label>
         </div>
 
         <fieldset class="form-group form-group-transition" id="chatgpt_settings">
-            <p></p>
             <p>Выберите модель GPT:</p>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="model" id="gpt-3.5" value="gpt-3.5-turbo-1106" checked>
@@ -43,10 +42,11 @@
             <input class="form-check-input" type="radio" name="mode" id="generate_audio" value="tts-1-1106">
             <label class="form-check-label" for="tts-1">Текст в аудио</label>
         </div>
-        <p>Выберите модель:</p>
+
         <fieldset class="form-group form-group-transition" id="tts_settings">
+            <p>Выберите модель:</p>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="tts" id="tts-1" value="tts-1-1106">
+                <input class="form-check-input" type="radio" name="tts" id="tts-1" value="tts-1-1106" checked>
                 <label class="form-check-label" for="tts-1">TTS</label>
             </div>
             <div class="form-check">
@@ -56,7 +56,7 @@
             <p>Выбрать голос для озвучки</p>
 
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="tts_voice" id="onyx" value="onyx">
+                <input class="form-check-input" type="radio" name="tts_voice" id="onyx" value="onyx" checked>
                 <label class="form-check-label" for="onyx">Onyx</label>
             </div>
             <div class="form-check">
@@ -84,7 +84,7 @@
 
         <div class="form-check">
             <input class="form-check-input" type="radio" name="mode" id="whisper-1" value="whisper-1">
-            <label class="form-check-label" for="whisper-1">Whisper - аудио в текст</label>
+            <label class="form-check-label" for="whisper-1">Аудио в текст</label>
         </div>
         <fieldset class="form-group form-group-transition" id="whisper_settings">
             <!-- настройки Whisper -->
