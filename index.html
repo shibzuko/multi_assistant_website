@@ -130,41 +130,44 @@
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
-    let tg = window.Telegram.WebApp;
-    tg.expand();
+let tg = window.Telegram.WebApp;
+tg.expand();
 
-    tg.MainButton.textColor = "#FFFFFF";
-    tg.MainButton.color = "#0BAC00";
+tg.MainButton.textColor = "#FFFFFF";
+tg.MainButton.color = "#0BAC00";
 
-    // Функция для получения выбранного значения из группы радио-кнопок
-    function getRadioValue(name) {
-        const radios = document.getElementsByName(name);
-        for (let radio of radios) {
-            if (radio.checked) {
-                return radio.value;
-            }
-        }
-        return null; // или значение по умолчанию, если ни одна кнопка не выбрана
-    }
+document.getElementById("sendModelSettings").addEventListener("click", function() {
+    const form = document.querySelector('form');
 
-    document.getElementById("sendModelSettings").addEventListener("click", function() {
-        // Получаем выбранное значение для режима и модели
-        const mode = getRadioValue('mode');
-        const model = getRadioValue('model');
-<!--        const speech = getRadioValue('speech'); // Если есть такая группа радио-кнопок-->
+    // Переменные для режима работы и выбранной модели
+    const mode = form['mode'].value;
+    const model = form['model'].value; // Теперь выбираем модель, которая действительно есть в форме
 
-        const messageObj = {
-            'Mode': mode,
-            'Model': model,
-<!--            'Speech': speech-->
-        };
+    // Переменные для дополнительных настроек, предполагаем что они есть в форме
+    const numTokens = form['num_tokens'] ? form['num_tokens'].value : undefined;
+    const temperature = form['temperature'] ? form['temperature'].value : undefined;
+    const prompt = form['prompt'] ? form['prompt'].value : undefined;
 
-        const message = JSON.stringify(messageObj);
+    // Переменные для TTS
+    const tts = form['tts'] ? form['tts'].value : undefined;
+    const tts_voice = form['tts_voice'] ? form['tts_voice'].value : undefined;
 
-        tg.sendData(message);
-        tg.MainButton.setText("Настройки сохранены!");
-        tg.MainButton.show();
-    });
+    const messageObj = {
+        'mode': mode,
+        'model': model,
+        'tts': tts,
+        'tts_voice': tts_voice
+    };
+
+    // Отфильтруем неопределенные значения
+    const messageObjFiltered = Object.fromEntries(Object.entries(messageObj).filter(([_, v]) => v != null));
+
+    const message = JSON.stringify(messageObjFiltered);
+
+    tg.sendData(message);
+    tg.MainButton.setText("Настройки сохранены!");
+    tg.MainButton.show();
+});
 </script>
 <!--<script>-->
 <!--    //Изменение диапазона значений:-->
