@@ -43,10 +43,10 @@
 body {
     font-family: 'Verdana', sans-serif;      /* Шрифт */
     padding: 1rem;                          /* Отступы */
-    background: linear-gradient(33deg, #011749, #00424E, #003C0D); /* Фоновый градиент */
-    background-size: 600% 100%;             /* Размер фонового градиента */
+    background: linear-gradient(333deg, #00551F, #5A0943, #4B3074, #00416B, #696AB1); /* Фоновый градиент */
+    background-size: 1000% 100%;             /* Размер фонового градиента */
     color: #fff;                            /* Цвет текста */
-    height: 100vh;                          /* Высота */
+    height: 130vh;                          /* Высота */
     animation: Gradient 12s ease infinite;  /* Анимация для градиента */
 }
 
@@ -56,7 +56,7 @@ body {
         background-position: 0% 50%;
     }
     50% {
-        background-position: 100% 50%;
+        background-position: 80% 50%;
     }
 }
 
@@ -72,7 +72,7 @@ form {
 
 /* Общие стили для заголовков h2 и legend */
 h2, legend {
-    font-weight: 500;                       /* Жирность шрифта */
+    font-weight: 50;                       /* Жирность шрифта */
     text-transform: uppercase;              /* Преобразование текста в верхний регистр */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Тень текста */
     background-color: #ffffff; /* Фоновый градиент */
