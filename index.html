@@ -13,7 +13,7 @@
 <body class="container mt-4">
 
 <form action="#" method="post" target="_blank">
-    <h2>Системные настройки GPT2222</h2>
+    <h2>Системные настройки GPT</h2>
 
 
     <fieldset class="form-group">
@@ -39,7 +39,7 @@
 
 
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="mode" id="generate_audio" value="tts-1-1106">
+            <input class="form-check-input" type="radio" name="mode" id="generate_audio" value="tts">
             <label class="form-check-label" for="tts-1">Текст в аудио</label>
         </div>
 
@@ -120,9 +120,9 @@
 
                 if (this.value === 'chatgpt') {
                     chatGptSettings.classList.add('open');
-                } else if (this.value === 'tts-1-1106') {
+                } else if (this.value === 'tts') {
                     ttsSettings.classList.add('open');
-                } else if (this.value === 'whisper-1') {
+                } else if (this.value === 'whisper') {
                     whisperSettings.classList.add('open');
                 }
             });
