@@ -36,11 +36,11 @@
 
         </fieldset>
 
-
+<!--МОДЕЛЬ 1-->
 
         <div class="form-check">
             <input class="form-check-input" type="radio" name="mode" id="generate_audio" value="tts">
-            <label class="form-check-label" for="tts-1">Текст в аудио</label>
+            <label class="form-check-label" for="tts-1">Текст в аудио Lite</label>
         </div>
 
         <fieldset class="form-group form-group-transition" id="tts_settings">
@@ -81,6 +81,50 @@
             </div>
         </fieldset>
 
+<!--МОДЕЛЬ 2-->
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="mode" id="generate_audio_2" value="generate_audio_eleven">
+            <label class="form-check-label" for="tts-1">Текст в аудио Premium</label>
+        </div>
+
+        <fieldset class="form-group form-group-transition" id="eleven_settings">
+            <div class="form-check">
+                <p>Голос озвучки:</p>
+                <input class="form-check-input" type="radio" name="eleven_voice" id="marcus" value="marcus" checked>
+                <label class="form-check-label" for="marcus">Marcus</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="eleven_voice" id="knightley" value="knightley">
+                <label class="form-check-label" for="knightley">Knightley</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="eleven_voice" id="alex" value="alex">
+                <label class="form-check-label" for="alex">Alex</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="eleven_voice" id="brian" value="brian">
+                <label class="form-check-label" for="brian">Brian</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="eleven_voice" id="hades" value="hades">
+                <label class="form-check-label" for="hades">Hades</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="eleven_voice" id="natasha" value="natasha">
+                <label class="form-check-label" for="natasha">Natasha</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="eleven_voice" id="joanne" value="joanne">
+                <label class="form-check-label" for="joanne">Joanne</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="eleven_voice" id="your_voice" value="your_voice">
+                <label class="form-check-label" for="your_voice">Использовать свой</label>
+            </div>
+
+        </fieldset>
+
 
         <div class="form-check">
             <input class="form-check-input" type="radio" name="mode" id="whisper-1" value="whisper-1">
@@ -112,17 +156,21 @@
             radio.addEventListener('change', function() {
                 const chatGptSettings = document.getElementById('chatgpt_settings');
                 const ttsSettings = document.getElementById('tts_settings');
+                const elevenSettings = document.getElementById('eleven_settings');
                 const whisperSettings = document.getElementById('whisper_settings');
 
                 chatGptSettings.classList.remove('open');
                 ttsSettings.classList.remove('open');
+                elevenSettings.classList.remove('open');
                 whisperSettings.classList.remove('open');
 
                 if (this.value === 'global_chatgpt') {
                     chatGptSettings.classList.add('open');
                 } else if (this.value === 'tts') {
                     ttsSettings.classList.add('open');
-                } else if (this.value === 'whisper222222222') {
+                } else if (this.value === 'generate_audio_eleven') {
+                    elevenSettings.classList.add('open');
+                } else if (this.value === 'whisper222222') {
                     whisperSettings.classList.add('open');
                 }
             });
@@ -135,12 +183,14 @@
             let model_gpt = form['model_gpt'] ? form['model_gpt'].value : undefined;
             let model_tts = form['model_tts'] ? form['model_tts'].value : undefined;
             let tts_voice = form.querySelector('input[name="tts_voice"]:checked') ? form.querySelector('input[name="tts_voice"]:checked').value : undefined;
+            let eleven_voice = form.querySelector('input[name="eleven_voice"]:checked') ? form.querySelector('input[name="eleven_voice"]:checked').value : undefined;
 
             const messageObj = {
                 'mode': mode,
                 'model_gpt': model_gpt,
                 'model_tts': model_tts,
-                'tts_voice': tts_voice
+                'tts_voice': tts_voice,
+                'eleven_voice': eleven_voice
             };
 
             const messageObjFiltered = Object.fromEntries(Object.entries(messageObj).filter(([_, v]) => v != null));
