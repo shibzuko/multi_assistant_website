@@ -36,7 +36,13 @@
     cursor: pointer; /* Курсор в виде руки при наведении */
     display: inline-block; /* Для лучшего контроля над макетом */
     vertical-align: middle; /* Выравниваем по центру вертикально */
+
+    overflow: hidden; /* Скрыть содержимое, выходящее за границы элемента */
+    text-overflow: ellipsis; /* Добавить многоточие, если текст не умещается */
+    max-width: calc(100% - 30px); /* Максимальная ширина с учетом радиокнопки и отступа */
+    margin-right: 10px; /* Отступ справа от радиокнопки */
 }
+
 
 
 /* Основные стили для body */
@@ -73,6 +79,7 @@ form {
 /* Общие стили для заголовков h2 и legend */
 h2, legend {
     font-weight: 50;                       /* Жирность шрифта */
+    text-align: center;
     text-transform: uppercase;              /* Преобразование текста в верхний регистр */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Тень текста */
     background-color: #ffffff; /* Фоновый градиент */
@@ -82,12 +89,12 @@ h2, legend {
 
 /* Стили для заголовка h2 */
 h2 {
-    margin: 1rem 0 1.8rem;                  /* Отступы */
+    margin: 0rem 0 1.8rem;                  /* Отступы */
     letter-spacing: 1px;                    /* Расстояние между символами */
     font-size: 1.5rem;                        /* Размер шрифта */
     text-align: center;                     /* Выравнивание текста по центру */
     border-bottom: 1px solid #fff;         /* Граница снизу */
-    padding-bottom: 10px;                   /* Отступ снизу */
+    padding-bottom: 3px;                   /* Отступ снизу */
 }
 
 /* Стили для legend */
@@ -104,14 +111,22 @@ legend {
 
 /* Стили для чекбоксов и радиокнопок */
 .form-check {
-    margin-bottom: 0.5rem;                    /* Отступ снизу */
+    margin-bottom: 1.5rem;                    /* Отступ снизу */
     display: family;                          /* Тип дисплея */
     align-items: center;                    /* Выравнивание элементов по вертикали */
 }
 
+/* Стили для чекбоксов и радиокнопок */
+.form-check-2 {
+    margin-bottom: 0rem;                    /* Отступ снизу */
+    display: family;                          /* Тип дисплея */
+    align-items: center;                    /* Выравнивание элементов по вертикали */
+    padding-left: 1.25rem;
+    padding-bottom: 1rem
+}
+
 /* Стили для input'ов чекбоксов и радиокнопок */
 .form-check-input {
-
     cursor: pointer;                        /* Курсор в виде руки */
     border: 1px solid #585858;                 /* Граница */
     background: transparent;                /* Фон */
@@ -120,7 +135,6 @@ legend {
 /* Стили для меток чекбоксов и радиокнопок */
 .form-check-label {
     cursor: pointer;                        /* Курсор в виде руки */
-
 }
 
 
@@ -179,7 +193,7 @@ legend {
     color: #FFFFFF;
     background-color: #A30000;
     border: double 1px transparent;
-    border-radius: 60px; /* Исправил ошибку синтаксиса, добавил значение */
+    border-radius: 60px;
     width: 100%; /* Установил ширину */
 
 }
@@ -211,8 +225,8 @@ legend {
 
 .form-group-transition.open {
     max-height: 1000px; /* Достаточно большое значение для вмещения содержимого */
-    padding: 1rem 1.5rem;
-    margin: 1rem auto;
+    padding: 0rem 1.5rem;
+    margin: 0rem auto;
 }
 
 

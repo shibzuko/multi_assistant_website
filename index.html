@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <title>TEST1 Настройки GPT</title>
+    <title>Настройки GPT</title>
 </head>
 
 <body class="container mt-4">
@@ -16,10 +16,10 @@
 
     <!--МОДЕЛЬ GPT-->
 
-    <h2>Системные настройки GPT</h2>
+    <h2>Системные настройки</h2>
 
     <fieldset class="form-group">
-        <legend>Режим работы бота</legend>
+        <div class="legend-head"><legend>Выберите режим работы</legend></div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="mode" id="chatgpt" value="global_chatgpt" checked>
             <label class="form-check-label" for="chatgpt">ChatGPT</label>
@@ -27,19 +27,18 @@
 
         <fieldset class="form-group form-group-transition" id="chatgpt_settings">
             <p>Выберите модель GPT:</p>
-            <div class="form-check">
+            <div class="form-check-2">
                 <input class="form-check-input" type="radio" name="model_gpt" id="gpt-3.5" value="gpt-3.5-turbo-1106"
                        checked>
                 <label class="form-check-label" for="gpt-3.5">GPT-3.5 Turbo</label>
             </div>
-            <div class="form-check">
+            <div class="form-check-2">
                 <input class="form-check-input" type="radio" name="model_gpt" id="gpt-4" value="gpt-4-1106-preview">
                 <label class="form-check-label" for="gpt-4">GPT-4</label>
             </div>
-
         </fieldset>
 
-    <!--МОДЕЛЬ SPLITTER-->
+        <!--МОДЕЛЬ SPLITTER-->
 
         <div class="form-check">
             <input class="form-check-input" type="radio" name="mode" id="audio_splitter_lalal"
@@ -47,15 +46,14 @@
             <label class="form-check-label" for="audio_splitter_lalal">Удалить музыку из аудио/видео</label>
         </div>
         <fieldset class="form-group form-group-transition" id="splitter">
-            <p>Голос озвучки:</p>
-            <div class="form-check">
+            <div class="form-check-2">
                 <input class="form-check-input" type="radio" name="splitter_lalal" id="audio_splitter"
                        value="audio_splitter" checked>
                 <label class="form-check-label" for="audio_splitter">Разделение вокала и инструментала</label>
             </div>
         </fieldset>
 
-    <!--МОДЕЛЬ TTS-->
+        <!--МОДЕЛЬ TTS-->
 
         <div class="form-check">
             <input class="form-check-input" type="radio" name="mode" id="generate_audio" value="tts">
@@ -64,43 +62,43 @@
 
         <fieldset class="form-group form-group-transition" id="tts_settings">
             <p>Модель озвучки:</p>
-            <div class="form-check">
+            <div class="form-check-2">
 
                 <input class="form-check-input" type="radio" name="model_tts" id="tts-1" value="tts-1-1106" checked>
                 <label class="form-check-label" for="tts-1">Обычное аудио</label>
             </div>
-            <div class="form-check">
+            <div class="form-check-2">
                 <input class="form-check-input" type="radio" name="model_tts" id="tts-1-hd" value="tts-1-hd-1106">
                 <label class="form-check-label" for="tts-1-hd">Аудио-HD</label>
             </div>
-            <div class="form-check">
+            <div class="form-check-2">
                 <p>Голос озвучки:</p>
                 <input class="form-check-input" type="radio" name="tts_voice" id="onyx" value="onyx" checked>
                 <label class="form-check-label" for="onyx">Onyx</label>
             </div>
-            <div class="form-check">
+            <div class="form-check-2">
                 <input class="form-check-input" type="radio" name="tts_voice" id="alloy" value="alloy">
                 <label class="form-check-label" for="alloy">Alloy</label>
             </div>
-            <div class="form-check">
+            <div class="form-check-2">
                 <input class="form-check-input" type="radio" name="tts_voice" id="echo" value="echo">
                 <label class="form-check-label" for="echo">Echo</label>
             </div>
-            <div class="form-check">
+            <div class="form-check-2">
                 <input class="form-check-input" type="radio" name="tts_voice" id="fable" value="fable">
                 <label class="form-check-label" for="fable">Fable</label>
             </div>
-            <div class="form-check">
+            <div class="form-check-2">
                 <input class="form-check-input" type="radio" name="tts_voice" id="nova" value="nova">
                 <label class="form-check-label" for="nova">Nova</label>
             </div>
-            <div class="form-check">
+            <div class="form-check-2">
                 <input class="form-check-input" type="radio" name="tts_voice" id="shimmer" value="shimmer">
                 <label class="form-check-label" for="shimmer">Shimmer</label>
             </div>
         </fieldset>
 
-    <!--МОДЕЛЬ ELEVEN-->
+        <!--МОДЕЛЬ ELEVEN-->
 
         <div class="form-check">
             <input class="form-check-input" type="radio" name="mode" id="generate_audio_2"
@@ -110,41 +108,41 @@
 
         <fieldset class="form-group form-group-transition" id="eleven_settings">
             <p>Голос озвучки:</p>
-            <div class="form-check">
+            <div class="form-check-2">
                 <input class="form-check-input" type="radio" name="eleven_voice" id="your_voice" value="your_voice">
                 <label class="form-check-label" for="your_voice">Использовать свой голос</label>
             </div>
-            <div class="form-check">
+            <div class="form-check-2">
                 <input class="form-check-input" type="radio" name="eleven_voice" id="marcus" value="marcus" checked>
                 <label class="form-check-label" for="marcus">Marcus</label>
             </div>
-            <div class="form-check">
+            <div class="form-check-2">
                 <input class="form-check-input" type="radio" name="eleven_voice" id="knightley" value="knightley">
                 <label class="form-check-label" for="knightley">Knightley</label>
             </div>
-            <div class="form-check">
+            <div class="form-check-2">
                 <input class="form-check-input" type="radio" name="eleven_voice" id="alex" value="alex">
                 <label class="form-check-label" for="alex">Alex</label>
             </div>
-            <div class="form-check">
+            <div class="form-check-2">
                 <input class="form-check-input" type="radio" name="eleven_voice" id="brian" value="brian">
                 <label class="form-check-label" for="brian">Brian</label>
             </div>
-            <div class="form-check">
+            <div class="form-check-2">
                 <input class="form-check-input" type="radio" name="eleven_voice" id="hades" value="hades">
                 <label class="form-check-label" for="hades">Hades</label>
             </div>
-            <div class="form-check">
+            <div class="form-check-2">
                 <input class="form-check-input" type="radio" name="eleven_voice" id="natasha" value="natasha">
                 <label class="form-check-label" for="natasha">Natasha</label>
             </div>
-            <div class="form-check">
+            <div class="form-check-2">
                 <input class="form-check-input" type="radio" name="eleven_voice" id="joanne" value="joanne">
                 <label class="form-check-label" for="joanne">Joanne</label>
             </div>
         </fieldset>
 
-    <!--МОДЕЛЬ WHISPER-->
+        <!--МОДЕЛЬ WHISPER-->
 
         <div class="form-check">
             <input class="form-check-input" type="radio" name="mode" id="whisper-1" value="whisper-1">
@@ -156,9 +154,9 @@
     </fieldset>
 
 
-    <div class="form-group">
-        <label>*Модуль в разработке*</label>
-    </div>
+<!--    <div class="form-group">-->
+<!--        <label>*Модуль в разработке*</label>-->
+<!--    </div>-->
 
     <div>
         <button type="button" class="btn btn-primary" id="sendModelSettings">Сохранить</button>
