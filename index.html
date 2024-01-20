@@ -13,8 +13,10 @@
 <body class="container mt-4">
 
 <form action="#" method="post" target="_blank">
-    <h2>Системные настройки GPT</h2>
 
+    <!--МОДЕЛЬ GPT-->
+
+    <h2>Системные настройки GPT</h2>
 
     <fieldset class="form-group">
         <legend>Режим работы бота</legend>
@@ -26,7 +28,8 @@
         <fieldset class="form-group form-group-transition" id="chatgpt_settings">
             <p>Выберите модель GPT:</p>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="model_gpt" id="gpt-3.5" value="gpt-3.5-turbo-1106" checked>
+                <input class="form-check-input" type="radio" name="model_gpt" id="gpt-3.5" value="gpt-3.5-turbo-1106"
+                       checked>
                 <label class="form-check-label" for="gpt-3.5">GPT-3.5 Turbo</label>
             </div>
             <div class="form-check">
@@ -36,7 +39,23 @@
 
         </fieldset>
 
-<!--МОДЕЛЬ 1-->
+    <!--МОДЕЛЬ SPLITTER-->
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="mode" id="audio_splitter_lalal"
+                   value="audio_splitter_lalal">
+            <label class="form-check-label" for="audio_splitter_lalal">Удалить музыку из аудио/видео</label>
+        </div>
+        <fieldset class="form-group form-group-transition" id="splitter">
+            <p>Голос озвучки:</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="splitter_lalal" id="audio_splitter"
+                       value="audio_splitter" checked>
+                <label class="form-check-label" for="audio_splitter">Разделение вокала и инструментала</label>
+            </div>
+        </fieldset>
+
+    <!--МОДЕЛЬ TTS-->
 
         <div class="form-check">
             <input class="form-check-input" type="radio" name="mode" id="generate_audio" value="tts">
@@ -81,16 +100,21 @@
             </div>
         </fieldset>
 
-<!--МОДЕЛЬ 2-->
+    <!--МОДЕЛЬ ELEVEN-->
 
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="mode" id="generate_audio_2" value="generate_audio_eleven">
+            <input class="form-check-input" type="radio" name="mode" id="generate_audio_2"
+                   value="generate_audio_eleven">
             <label class="form-check-label" for="generate_audio_2">Текст в аудио Premium</label>
         </div>
 
         <fieldset class="form-group form-group-transition" id="eleven_settings">
+            <p>Голос озвучки:</p>
             <div class="form-check">
-                <p>Голос озвучки:</p>
+                <input class="form-check-input" type="radio" name="eleven_voice" id="your_voice" value="your_voice">
+                <label class="form-check-label" for="your_voice">Использовать свой голос</label>
+            </div>
+            <div class="form-check">
                 <input class="form-check-input" type="radio" name="eleven_voice" id="marcus" value="marcus" checked>
                 <label class="form-check-label" for="marcus">Marcus</label>
             </div>
@@ -118,13 +142,9 @@
                 <input class="form-check-input" type="radio" name="eleven_voice" id="joanne" value="joanne">
                 <label class="form-check-label" for="joanne">Joanne</label>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="eleven_voice" id="your_voice" value="your_voice">
-                <label class="form-check-label" for="your_voice">Использовать свой</label>
-            </div>
-
         </fieldset>
 
+    <!--МОДЕЛЬ WHISPER-->
 
         <div class="form-check">
             <input class="form-check-input" type="radio" name="mode" id="whisper-1" value="whisper-1">
@@ -134,7 +154,6 @@
             <!-- настройки Whisper -->
         </fieldset>
     </fieldset>
-
 
 
     <div class="form-group">
@@ -148,62 +167,67 @@
 </form>
 
 
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+    let tg = window.Telegram.WebApp;
+    tg.expand();
+    document.querySelectorAll('input[name="mode"]').forEach(function(radio) {
+        radio.addEventListener('change', function() {
+            const chatGptSettings = document.getElementById('chatgpt_settings');
+            const ttsSettings = document.getElementById('tts_settings');
+            const elevenSettings = document.getElementById('eleven_settings');
+            const whisperSettings = document.getElementById('whisper_settings');
+            const splitterSettings = document.getElementById('splitter');
 
+            chatGptSettings.classList.remove('open');
+            ttsSettings.classList.remove('open');
+            elevenSettings.classList.remove('open');
+            whisperSettings.classList.remove('open');
+            splitterSettings.classList.remove('open');
 
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-        let tg = window.Telegram.WebApp;
-        tg.expand();
-        document.querySelectorAll('input[name="mode"]').forEach(function(radio) {
-            radio.addEventListener('change', function() {
-                const chatGptSettings = document.getElementById('chatgpt_settings');
-                const ttsSettings = document.getElementById('tts_settings');
-                const elevenSettings = document.getElementById('eleven_settings');
-                const whisperSettings = document.getElementById('whisper_settings');
-
-                chatGptSettings.classList.remove('open');
-                ttsSettings.classList.remove('open');
-                elevenSettings.classList.remove('open');
-                whisperSettings.classList.remove('open');
-
-                if (this.value === 'global_chatgpt') {
-                    chatGptSettings.classList.add('open');
-                } else if (this.value === 'tts') {
-                    ttsSettings.classList.add('open');
-                } else if (this.value === 'generate_audio_eleven') {
-                    elevenSettings.classList.add('open');
-                } else if (this.value === 'whisper222222') {
-                    whisperSettings.classList.add('open');
-                }
-            });
+            if (this.value === 'global_chatgpt') {
+                chatGptSettings.classList.add('open');
+            } else if (this.value === 'tts') {
+                ttsSettings.classList.add('open');
+            } else if (this.value === 'generate_audio_eleven') {
+                elevenSettings.classList.add('open');
+            } else if (this.value === 'whisper222222') {
+                whisperSettings.classList.add('open');
+            } else if (this.value === 'audio_splitter_lalal') {
+                splitterSettings.classList.add('open');
+            }
         });
+    });
 
-        document.getElementById("sendModelSettings").addEventListener("click", function() {
-            const form = document.querySelector('form');
+    document.getElementById("sendModelSettings").addEventListener("click", function() {
+        const form = document.querySelector('form');
 
-            const mode = form['mode'].value;
-            let model_gpt = form['model_gpt'] ? form['model_gpt'].value : undefined;
-            let model_tts = form['model_tts'] ? form['model_tts'].value : undefined;
-            let tts_voice = form.querySelector('input[name="tts_voice"]:checked') ? form.querySelector('input[name="tts_voice"]:checked').value : undefined;
-            let eleven_voice = form.querySelector('input[name="eleven_voice"]:checked') ? form.querySelector('input[name="eleven_voice"]:checked').value : undefined;
+        const mode = form['mode'].value;
+        let model_gpt = form['model_gpt'] ? form['model_gpt'].value : undefined;
+        let model_tts = form['model_tts'] ? form['model_tts'].value : undefined;
+        let tts_voice = form.querySelector('input[name="tts_voice"]:checked') ? form.querySelector('input[name="tts_voice"]:checked').value : undefined;
+        let eleven_voice = form.querySelector('input[name="eleven_voice"]:checked') ? form.querySelector('input[name="eleven_voice"]:checked').value : undefined;
+        let splitter_lalal = form['splitter_lalal'] ? form['splitter_lalal'].value : undefined;
 
-            const messageObj = {
-                'mode': mode,
-                'model_gpt': model_gpt,
-                'model_tts': model_tts,
-                'tts_voice': tts_voice,
-                'eleven_voice': eleven_voice
-            };
 
-            const messageObjFiltered = Object.fromEntries(Object.entries(messageObj).filter(([_, v]) => v != null));
+        const messageObj = {
+            'mode': mode,
+            'model_gpt': model_gpt,
+            'model_tts': model_tts,
+            'tts_voice': tts_voice,
+            'eleven_voice': eleven_voice,
+            'splitter_lalal': splitter_lalal
+        };
 
-            const message = JSON.stringify(messageObjFiltered);
+        const messageObjFiltered = Object.fromEntries(Object.entries(messageObj).filter(([_, v]) => v != null));
 
-            tg.sendData(message);
-            tg.MainButton.setText("Настройки сохранены!");
-            tg.MainButton.show();
-            tg.close()
-        });
-    </script>
+        const message = JSON.stringify(messageObjFiltered);
+
+        tg.sendData(message);
+        tg.MainButton.setText("Настройки сохранены!");
+        tg.MainButton.show();
+        tg.close()
+    });
+</script>
 </body>
 </html>
