@@ -20,26 +20,23 @@
 
     <fieldset class="form-group">
         <div class="legend-head"><legend>Выберите режим работы</legend></div>
-        <div class="form-check">
+       <div class="form-check">
             <input class="form-check-input" type="radio" name="mode" id="chatgpt" value="global_chatgpt" checked>
             <label class="form-check-label" for="chatgpt">ChatGPT</label>
         </div>
 
-        <fieldset class="form-group form-group-transition" id="chatgpt_settings">
-            <p>Выберите модель GPT:</p>
+        <fieldset class="form-group form-group-transition open" id="chatgpt_settings">
             <div class="form-check-2">
-                <input class="form-check-input" type="radio" name="model_gpt" id="gpt-3.5" value="gpt-3.5-turbo-0125"
-                       checked>
-                <label class="form-check-label" for="gpt-3.5">GPT-3.5 Turbo</label>
+                <input class="form-check-input" type="radio" name="model_gpt" id="gpt-4o-mini" value="gpt-4o-mini" checked>
+                <label class="form-check-label" for="gpt-4o-mini">GPT-4o Mini</label>
             </div>
             <div class="form-check-2">
-                <input class="form-check-input" type="radio" name="model_gpt" id="gpt-4" value="gpt-4-0125-preview">
-                <label class="form-check-label" for="gpt-4">GPT-4</label>
+                <input class="form-check-input" type="radio" name="model_gpt" id="gpt-4o" value="gpt-4o">
+                <label class="form-check-label" for="gpt-4o">GPT-4o</label>
             </div>
         </fieldset>
 
         <!--МОДЕЛЬ SPLITTER-->
-
         <div class="form-check">
             <input class="form-check-input" type="radio" name="mode" id="audio_splitter_lalal"
                    value="audio_splitter_lalal">
